@@ -5,7 +5,7 @@ const App = () => {
   const [results, setResults] = useState(null);
 
   const showResult = (resultList) => resultList.map((result) => {
-    return `<p>ID: ${result.id}, Title: ${result.l} [${result.y}]</p>`;
+    return `<p>ID: ${result.id}, Title: ${result.l} [${result.y}]</p><br>`;
   })
   
   const handleSubmit = async (e) => {
