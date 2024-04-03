@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
-
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,7 +16,7 @@ app.get('/api/search', async (req, res) => {
     const response = await fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=${query}`, {
       headers: {
         'x-rapidapi-host': 'imdb8.p.rapidapi.com',
-        'x-rapidapi-key': '22aaa6b396msh6672e59c009b549p12ddc1jsn4dc476470b29', // Replace with your RapidAPI key
+        'x-rapidapi-key': process.env.API_KEY, // Replace with your RapidAPI key
       },
     });
 
